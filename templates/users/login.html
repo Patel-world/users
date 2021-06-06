@@ -1,0 +1,95 @@
+{% extends 'learning_logs/base.html' %}
+
+{% load bootstrap3 %}
+
+{% block content %}
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <title>login</title>
+    <div class="card">
+      <h1 id="l1">Log in</h1>
+      <form method="post" action="{% url 'login' %}" class="form">    {% csrf_token %}
+
+        {% bootstrap_form form %}
+        {% buttons %}
+            <button name="submit" class="btn btn-primary">log in</button>
+        {% endbuttons %}
+        <input type="hidden" name="next" value="{% url 'index343' %}" />
+    </form>
+
+
+</div>
+
+    <!--<div class="card border-secondary mb-3" style="max-width: 18rem;">
+  <div class="card-header">Log in to your account.</div>
+  <div class="card-body text-secondary">
+    <form method="post" action="{% url 'login' %}" class="form">    {% csrf_token %}
+        <input type="text" name="username" placeholder="username"><br>
+        <input type="password" name="password" placeholder="password"><br>
+        <input type="submit">
+    </form>
+  </div>
+</div>
+   <div id="log">
+    <h2>Log in to your account.</h2>
+    <form method="post" action="{% url 'login' %}" class="form">    {% csrf_token %}
+        <input type="text" name="username" placeholder="username"><br>
+        <input type="password" name="password" placeholder="password"><br>
+        <input type="submit">
+    </form>
+    </div>-->
+    <style>
+    .card {
+    border: ridge;
+    height: 444px;
+    max-width: 440px;
+    inline-size: -webkit-fill-available;
+    top: 43px;
+}
+    .card.border-secondary.mb-3 {
+    position: absolute;
+    left: 46%;
+    top: 99px;
+    height: 500px;
+    width: 350px;
+}
+    input[type="text"] {
+        margin: 20px;
+    position: relative;
+    margin-bottom: 40px;
+    max-width: 350px;
+    min-width: -webkit-fill-available;
+    height: 50px;
+
+}
+    input[type="password"] {
+        margin: 20px;
+        position: relative;
+
+        max-width: 350px;
+    min-width: -webkit-fill-available;
+    height: 50px;
+
+}
+    input[type="submit"] {
+        margin: 20px;
+    position: relative;
+
+    inline-size: -webkit-fill-available;
+    height: 44px;
+}
+    form.form {
+    position: relative;
+    top: 71px;
+    background: gainsboro;
+}
+    h1#l1 {
+    top: 36px;
+    margin-left: 100px;
+    position: relative;
+    font-family: cursive;
+    font-weight: 900;
+}
+    </style>
+{% endblock content %}
+
+
